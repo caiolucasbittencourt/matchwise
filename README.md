@@ -6,11 +6,11 @@
 ![Prisma](https://img.shields.io/badge/prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/postgresql-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
-Uma API assíncrona construída com Node.js, Express, Prisma e BullMQ para processar partidas e recalcular o rating de jogadores em background com consistência transacional.
+Uma API assíncrona para processar partidas e recalcular o rating de jogadores em background com consistência transacional.
 
 ## Tecnologias
 
-- **Node.js 18.18+** (Ambiente de execução JavaScript)
+- **Node.js 18.18+** (Ambiente de execução JavaScript; CI usa Node 22 por padrão)
 - **TypeScript** (Tipagem estática para segurança e manutenção)
 - **Express** (Framework para construção da API HTTP)
 - **Prisma ORM** (Acesso e modelagem de dados com PostgreSQL)
@@ -144,6 +144,8 @@ npm run prisma:deploy
 }
 ```
 
+**Nota:** os jogadores precisam existir previamente na tabela `User` (não há endpoint de cadastro nesta API).
+
 #### Arquitetura de Processamento
 
 | Componente     | Responsabilidade                                                      |
@@ -152,6 +154,8 @@ npm run prisma:deploy
 | Fila (BullMQ)  | Gerencia enfileiramento, retry e backoff dos jobs                     |
 | Worker         | Busca partida e jogadores, calcula Elo e executa atualizações         |
 | Banco (Prisma) | Persiste dados com transação serializable e atualização atômica       |
+
+**Observação:** o insert do match e o enqueue não são parte da mesma transação; a consistência de rating é garantida no worker com transação serializable e lock pessimista.
 
 ## License
 
