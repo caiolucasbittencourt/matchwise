@@ -6,7 +6,7 @@
 ![Prisma](https://img.shields.io/badge/prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/postgresql-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
-Uma API assíncrona para processar partidas e recalcular o rating de jogadores em background com consistência transacional.
+API assíncrona para processar partidas e recalcular o rating de jogadores em background, com consistência transacional no processamento do rating.
 
 ## Tecnologias
 
