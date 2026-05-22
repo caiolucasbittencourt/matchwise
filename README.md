@@ -159,4 +159,4 @@ npm run prisma:deploy
 
 ## License
 
-Source code is licensed under **MIT**.
+Source code is licensed under [MIT](LICENSE).
