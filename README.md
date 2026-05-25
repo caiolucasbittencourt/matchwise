@@ -1,4 +1,4 @@
-# Motor de Cálculo de Rating Assíncrono
+# Motor de Cálculo Assíncrono
 
 ![Node.js](https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
@@ -38,8 +38,8 @@ API assíncrona para processar partidas e recalcular o rating de jogadores em ba
 ### Instalação
 
 ```bash
-git clone https://github.com/caiolucasbittencourt/motor-de-calculo-de-rating-assincrono.git
-cd motor-de-calculo-de-rating-assincrono
+git clone https://github.com/caiolucasbittencourt/motor-de-calculo-assincrono.git
+cd motor-de-calculo-assincrono
 npm install
 ```
 
